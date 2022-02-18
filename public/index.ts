@@ -51,8 +51,8 @@ async function querySwapReturns(ulunaOfferAmount: number, denoms: string[]): Pro
 }
 
 // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-function formatInteger(integer: number) {
-  return integer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function formatInteger(integer: number, separator = '<span style="margin-right: 5px;"></span>') {
+  return integer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 }
 
 function formatPercent(decimal: number) {
@@ -120,10 +120,10 @@ submitBtn.addEventListener("click", async () => {
     return `
       <tr>
         <td>${result.denom}</td>
-        <td>${formatInteger(result.amount)}</td>
         <td>${result.gasPrice}</td>
-        <td>${formatInteger(result.gasUnits)}</td>
-        <td>${formatPercent(result.gasUnits / uusdGasUnits - 1)}</td>
+        <td align="right">${formatInteger(result.amount)}</td>
+        <td align="right">${formatInteger(result.gasUnits)}</td>
+        <td align="right">${formatPercent(result.gasUnits / uusdGasUnits - 1)}</td>
       </tr>
     `;
   });
@@ -132,8 +132,8 @@ submitBtn.addEventListener("click", async () => {
       <thead>
         <tr>
           <th scope="col">denom</th>
-          <th scope="col">amount</th>
           <th scope="col">gas_price</th>
+          <th scope="col">amount</th>
           <th scope="col">gas_units</th>
           <th scope="col">efficiency</th>
         <tr>
