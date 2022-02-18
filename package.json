@@ -4,7 +4,7 @@
   "author": "larry <gm@larry.engineer>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "rm -rfv dist && npx parcel build public/index.html",
+    "build": "rm -rfv dist && npx parcel build public/index.html --public-url /which-denom",
     "serve": "npx parcel public/index.html"
   },
   "dependencies": {
