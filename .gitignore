@@ -1,0 +1,9 @@
+# nodejs
+node_modules/
+
+# parcel
+.parcel-cache/
+dist/
+
+# macOS
+.DS_Store

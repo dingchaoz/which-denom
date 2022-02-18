@@ -1,0 +1,26 @@
+{
+  "name": "which-denom",
+  "version": "1.0.0",
+  "author": "larry <gm@larry.engineer>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "rm -rfv dist && npx parcel build public/index.html",
+    "serve": "npx parcel public/index.html"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "parcel": "^2.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
+  },
+  "alias": { 
+    "process": false 
+  }
+}
