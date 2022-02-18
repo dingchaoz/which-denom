@@ -50,6 +50,11 @@ async function querySwapReturns(ulunaOfferAmount: number, denoms: string[]): Pro
   });
 }
 
+// https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+function formatInteger(integer: number) {
+  return integer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function formatPercent(decimal: number) {
   return (decimal >= 0 ? "+" : "−") + (100 * Math.abs(decimal)).toFixed(1) + "%";
 }
@@ -115,9 +120,9 @@ submitBtn.addEventListener("click", async () => {
     return `
       <tr>
         <td>${result.denom}</td>
-        <td>${result.amount}</td>
+        <td>${formatInteger(result.amount)}</td>
         <td>${result.gasPrice}</td>
-        <td>${result.gasUnits}</td>
+        <td>${formatInteger(result.gasUnits)}</td>
         <td>${formatPercent(result.gasUnits / uusdGasUnits - 1)}</td>
       </tr>
     `;
